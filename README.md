@@ -1,2 +1,2 @@
 # feza
-Yangın Alarm Sistemi ve Su Püskürtme Projesi Bu proje, yangınları erken algılayarak hızlı müdahale etmeyi amaçlar. NTC Sensör, Buzzer, Dalgıç Pompa ve Arduino Uno kullanılarak otomatik alarm ve su püskürtme sistemi geliştirilmiştir. AutoCAD ile maket tasarlanmış ve sistem entegre edilmiştir.
+This project aims to detect fires early and intervene quickly. An automatic alarm and water spraying system has been developed using an NTC sensor, buzzer, submersible pump, and Arduino Uno. A model has been designed with AutoCAD, and the system has been integrated.
