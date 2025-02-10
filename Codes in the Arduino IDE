@@ -1,0 +1,42 @@
+// Pin Definitions
+const int sensorPin = 2;   // Pin where the digital temperature sensor is connected
+const int buzzerPin = 7;    // Buzzer pin
+const int pumpIn1 = 8;      // L298N motor driver IN1 pin
+const int pumpIn2 = 9;      // L298N motor driver IN2 pin
+
+void setup() {
+  // Set pin modes
+  pinMode(sensorPin, INPUT);          // Sensor pin input
+  pinMode(buzzerPin, OUTPUT);         // Buzzer pin output
+  pinMode(pumpIn1, OUTPUT);           // Pump output
+  pinMode(pumpIn2, OUTPUT);           // Pump output
+
+  // Initial states
+  digitalWrite(buzzerPin, LOW);
+  digitalWrite(pumpIn1, LOW);
+  digitalWrite(pumpIn2, LOW);
+
+  // Start serial communication
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Read the digital value from the sensor
+  int sensorState = digitalRead(sensorPin);
+
+  // Print the sensor status to the serial monitor
+  Serial.print("Sensor Status: ");
+  if (sensorState == LOW) {  // If LOW, fire detected
+    Serial.println("HIGH (Fire Detected)");
+    digitalWrite(buzzerPin, HIGH);   // Activate buzzer
+    digitalWrite(pumpIn1, HIGH);     // Activate pump
+    digitalWrite(pumpIn2, LOW);      // Pump direction
+  } else {  // If HIGH, normal situation
+    Serial.println("LOW (Normal Situation)");
+    digitalWrite(buzzerPin, LOW);    // Deactivate buzzer
+    digitalWrite(pumpIn1, LOW);      // Deactivate pump
+    digitalWrite(pumpIn2, LOW);
+  }
+
+  delay(1000); // Wait for 1 second
+}
