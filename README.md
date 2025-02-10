@@ -34,7 +34,4 @@ When the **temperature sensor** detects a fire, the **buzzer** provides an audib
 
 ---
 
-## 🔧 Circuit Diagram  
-*()*  
-
 
