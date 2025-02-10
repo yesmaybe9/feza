@@ -34,4 +34,4 @@ When the **temperature sensor** detects a fire, the **buzzer** provides an audib
 
 ---
 
-
+This is a prototype project.
